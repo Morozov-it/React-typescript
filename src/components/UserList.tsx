@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import { IUser } from '../types';
+import UserItem from './UserItem';
 
 //Создаем типы полей для props
 interface UserListProps {
@@ -10,10 +11,7 @@ const UserList: FC<UserListProps> = ({ users }) => {
     return (
         <div>
             {users.map((user) =>
-                <div key={user.id}
-                style={{padding: 10, border:'1px solid gray'}}>
-                    {user.id}. {user.name} live in {user.address.city} at {user.address.street} street
-                </div>
+                <UserItem key={user.id} user={user}/>
             )}
         </div>)
 };

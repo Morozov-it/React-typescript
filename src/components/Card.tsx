@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 
 //создаем перечисление констант
 export enum CardVariant {
@@ -23,9 +23,7 @@ interface CardProps {
 
 //компонент Card является типом и принимает пропсы типом CardProps
 const Card: FC<CardProps> = ({ width, height, variant, children, onClick }) => {
-
-    const [state, setState] = useState(0);
-
+    const state = 0;
     return (
         <div style={{
             width, height,

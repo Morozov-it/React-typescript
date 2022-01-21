@@ -7,7 +7,11 @@ interface UserItemProps {
 
 const UserItem: FC<UserItemProps> = ({user}) => {
     return (
-        <div style={{padding: 10, border:'1px solid gray'}}>
+        <div style={{
+            padding: 10,
+            margin: 5,
+            border: '1px solid gray'
+        }}>
             {user.id}. {user.name} live in {user.address.city} at {user.address.street} street
         </div>
     )

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import './App.css';
+import EventsExample from './components/EventsExample';
 import List from './components/List';
 import TodoItem from './components/TodoItem';
 import UserItem from './components/UserItem';
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className='app'>
       <h1>React Typescript</h1>
+      <EventsExample />
       <h2>Users</h2>
       <List items={users}
         renderItem={(item) => <UserItem user={item} key={item.id}/>}

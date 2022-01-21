@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import './App.css';
 import Card, { CardVariant } from './components/Card';
-import UserList from './components/UserList';
+import List from './components/List';
+import UserItem from './components/UserItem';
 import { IUser } from './types';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         //контролируем что в массиве объектов от сервера есть типовые поля как в IUser
         const response = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
         setUsers(response.data);
-        console.log(response.data)
+        //console.log(response.data)
       } catch (e) {
         alert(e)
       }
@@ -40,7 +41,10 @@ function App() {
         onClick={(num:number)=>console.log('click', num)}>
         <button>button</button>
       </Card>
-      <UserList users={users}/>
+      {/* <UserList users={users} /> */}
+      <List items={users}
+        renderItem={(item) => <UserItem user={item} key={item.id}/>}
+      />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ITodo } from './../types';
 import List from './../components/List';
 import TodoItem from './../components/TodoItem';
+import {NavLink} from 'react-router-dom'
 
 const TodoPage = () => {
     //типизация хука useState, должен вернуться массив типовых объектов
@@ -23,8 +24,13 @@ const TodoPage = () => {
         <div>
             <h2>Todos</h2>
             <List items={todos}
-                renderItem={(item) => <TodoItem todo={item} key={item.id}/>}
+                renderItem={(todo: ITodo) => <TodoItem
+                    todo={todo}
+                    key={todo.id} />}
             />
+            <div>
+                <NavLink to={'/'}>BACK</NavLink>
+            </div>
         </div>
     )
 };

@@ -5,6 +5,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import UserPage from './pages/UserPage';
 import TodoPage from './pages/TodoPage';
 import Main from './pages/Main';
+import UserItemPage from './pages/UserItemPage';
+import TodoItemPage from './pages/TodoItemPage';
 
 function App() { 
   return (
@@ -12,7 +14,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/users' element={<UserPage />} />
+        <Route path='/users/:id' element={<UserItemPage />} />
         <Route path='/todos' element={<TodoPage />} />
+        <Route path='/todos/:id' element={<TodoItemPage />} />
         <Route path='/events' element={<EventsExample />} />
         <Route path='/*' element={<div>Error path</div>} />
       </Routes>

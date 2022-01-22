@@ -3,10 +3,12 @@ import axios from 'axios';
 import { IUser } from './../types';
 import UserItem from './../components/UserItem';
 import List from './../components/List';
+import {NavLink, useNavigate} from 'react-router-dom'
 
 const UserPage: FC = () => {
     //типизация хука useState, должен вернуться массив типовых объектов
     const [users, setUsers] = useState<IUser[]>([]);
+    let navigate = useNavigate();
 
     useEffect(() => {
         fetchUsers();
@@ -27,8 +29,14 @@ const UserPage: FC = () => {
         <div>
             <h2>Users</h2>
             <List items={users}
-                renderItem={(item) => <UserItem user={item} key={item.id}/>}
+                renderItem={(user: IUser) => <UserItem
+                    onClick={(user)=>navigate(`/users/${user.id}`)}
+                    user={user}
+                    key={user.id} />}
             />
+            <div>
+                <NavLink to={'/'}>BACK</NavLink>
+            </div>
         </div>
     )
 };

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ITodo } from './../types';
-import List from './../components/List';
-import TodoItem from './../components/TodoItem';
-import {NavLink} from 'react-router-dom'
+import { ITodo } from '../types';
+import List from '../components/List';
+import TodoItem from '../components/TodoItem';
+import {NavLink, useNavigate} from 'react-router-dom'
 
-const TodoPage = () => {
+const TodosPage = () => {
     //типизация хука useState, должен вернуться массив типовых объектов
     const [todos, setTodos] = useState<ITodo[]>([]);
+    const navigate = useNavigate();
+
     useEffect(() => {
         fetchTodos();
     }, [])
@@ -25,6 +27,7 @@ const TodoPage = () => {
             <h2>Todos</h2>
             <List items={todos}
                 renderItem={(todo: ITodo) => <TodoItem
+                    onClick={(todo)=>navigate(`/todos/${todo.id}`)}
                     todo={todo}
                     key={todo.id} />}
             />
@@ -35,4 +38,4 @@ const TodoPage = () => {
     )
 };
 
-export default TodoPage;
+export default TodosPage;

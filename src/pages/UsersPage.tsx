@@ -1,11 +1,11 @@
 import React, { useState, useEffect, FC } from 'react';
 import axios from 'axios';
-import { IUser } from './../types';
-import UserItem from './../components/UserItem';
-import List from './../components/List';
+import { IUser } from '../types';
+import UserItem from '../components/UserItem';
+import List from '../components/List';
 import {NavLink, useNavigate} from 'react-router-dom'
 
-const UserPage: FC = () => {
+const UsersPage: FC = () => {
     //типизация хука useState, должен вернуться массив типовых объектов
     const [users, setUsers] = useState<IUser[]>([]);
     let navigate = useNavigate();
@@ -41,4 +41,4 @@ const UserPage: FC = () => {
     )
 };
 
-export default UserPage;
+export default UsersPage;

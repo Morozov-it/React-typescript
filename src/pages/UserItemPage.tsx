@@ -32,7 +32,7 @@ const UserItemPage: FC = () => {
             <h2>Page of user named {user?.name}</h2>
             <div>Email: {user?.email}</div>
             <div>Address: {user?.address.city} {user?.address.street}</div>
-            <button onClick={()=>{navigate('/users')}}>Users</button>
+            <button onClick={()=>navigate('/users')}>Users</button>
         </div>
     )
 };

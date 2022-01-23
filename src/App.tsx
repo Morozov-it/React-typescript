@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css';
 import EventsExample from './components/EventsExample';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -11,7 +10,7 @@ import TodoItemPage from './pages/TodoItemPage';
 function App() { 
   return (
     <BrowserRouter>
-      <Routes>
+        <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:id' element={<UserItemPage />} />

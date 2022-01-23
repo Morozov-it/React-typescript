@@ -1,15 +1,36 @@
 import React, { FC } from 'react';
-import {NavLink} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+
+const styles = {
+    link: {
+        border: '1px solid rgb(53, 53, 236)',
+        borderRadius: '5px',
+        alignSelf: 'stretch',
+        marginTop: 10,
+        cursor: 'pointer'
+    }
+}
 
 const Main: FC = () => {
+    const navigate = useNavigate();
     return (
-        <div>
+        <div style={{
+            width: 968,
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+        }}>
             <h1>React Typescript</h1>
-            <div>
-                <NavLink to={'/users'}>Users</NavLink>
+            <div style={styles.link}
+                onClick={()=>navigate('/users')}>
+                USERS
             </div>
-            <div>
-                <NavLink to={'/todos'}>Todos</NavLink>
+            <div style={styles.link}
+                onClick={()=>navigate('/todos')}>
+                TODOS
             </div>
         </div>
     )

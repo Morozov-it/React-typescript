@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/React-typescript/static/css/main.31d6cfe0.css",
-    "main.js": "/React-typescript/static/js/main.6df5fd5f.js",
+    "main.js": "/React-typescript/static/js/main.ac69c823.js",
     "index.html": "/React-typescript/index.html",
-    "main.6df5fd5f.js.map": "/React-typescript/static/js/main.6df5fd5f.js.map"
+    "main.ac69c823.js.map": "/React-typescript/static/js/main.ac69c823.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.6df5fd5f.js"
+    "static/js/main.ac69c823.js"
   ]
 }

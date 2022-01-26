@@ -1,6 +1,6 @@
 import './App.css';
 import EventsExample from './components/EventsExample';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import UsersPage from './pages/UsersPage';
 import TodosPage from './pages/TodosPage';
 import Main from './pages/Main';
@@ -9,8 +9,8 @@ import TodoItemPage from './pages/TodoItemPage';
 
 function App() { 
   return (
-    <BrowserRouter>
-        <Routes>
+    <div style={{maxWidth: '980px', margin: '0 auto'}}>
+      <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:id' element={<UserItemPage />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path='/events' element={<EventsExample />} />
         <Route path='/*' element={<div>Error path</div>} />
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 

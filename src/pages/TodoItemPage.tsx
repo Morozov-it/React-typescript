@@ -20,14 +20,16 @@ const TodoItemPage: FC = () => {
     }
 
     return (
+    <>
         <div style={{
-            border: todo?.completed?'2px solid green':'2px solid red' 
-        }}>
+            border: todo?.completed?'2px solid green':'2px solid red'}}>
             <h2>Page of todo titled {todo?.title}</h2>
             <div>Id: {todo?.id}</div>
             <div>Completed: {todo?.completed ? 'Yes!' : 'No!'}</div>
-            <button onClick={()=>navigate('/todos')}>back</button>
+            
         </div>
+        <button onClick={()=>navigate('/todos')}>back</button>
+    </>
     )
 };
 

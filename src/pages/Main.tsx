@@ -15,8 +15,6 @@ const Main: FC = () => {
     const navigate = useNavigate();
     return (
         <div style={{
-            width: 968,
-            margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
